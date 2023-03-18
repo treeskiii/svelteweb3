@@ -11,9 +11,8 @@
 	import { formatEther } from 'ethers/lib/utils';
 </script>
 
-<main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif">
-	<h1 class="text-5xl text-black font-bold">Svelte Ethers Template</h1>
-
+<main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-slate-300">
+	<h1 class="text-5xl text-black font-bold">Treeski's Starter Dapp</h1>
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
 		<h1 class="text-2xl text-black font-bold">Wallet and Provider</h1>
 		<h2 class="text-xl text-black font-semibold">$connected: {$connected}</h2>

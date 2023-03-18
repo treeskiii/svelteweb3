@@ -12,6 +12,7 @@
 </script>
 
 <main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif">
+	<button></button>
 	<h1 class="text-5xl text-black font-bold">Svelte Ethers Template</h1>
 
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
