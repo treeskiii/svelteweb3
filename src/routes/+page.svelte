@@ -9,10 +9,13 @@
 	} from '$lib/stores/provider';
 	import { balanceOnBlock } from '$lib/stores/state';
 	import { formatEther } from 'ethers/lib/utils';
+	import Navbar from 'src/components/navbar.svelte';
 </script>
 
 <main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-slate-300">
+	<Navbar />
 	<h1 class="text-5xl text-black font-bold">Treeski's Starter Dapp</h1>
+	<div class="card"></div>
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
 		<h1 class="text-2xl text-black font-bold">Wallet and Provider</h1>
 		<h2 class="text-xl text-black font-semibold">$connected: {$connected}</h2>
