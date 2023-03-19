@@ -24,4 +24,4 @@ const config = {
 
 export default config;
 
-// updated
+// updated 1
