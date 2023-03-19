@@ -8,6 +8,7 @@
 	} from '$lib/stores/provider';
 	import { balanceOnBlock } from '$lib/stores/state';
 	import { formatEther } from 'ethers/lib/utils';
+	import Logo from "$lib/public/piolabslogo.png";
 </script>
 
 <header>
@@ -23,14 +24,14 @@
 		</div>
 		<div class="navbar-end">
 			{#if !$connected}
-				<div class="btn mr-6" on:click={connectMetamask}>Connect Wallet</div>
+				<div class="btn mr-6 " on:click={connectMetamask}>Connect Wallet</div>
 			{:else}
 				<div class="btn mr-6" on:click={disconnect}>Disconnect</div>
 			{/if}
 		</div>
-	</div>w
+	</div>
 	<div
-		class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 py-2.5 px-6 sm:px-3.5 sm:before:flex-1"
+		class="relative isolate flex items-center gap-x-6 overflow-hidden bg-blue-900 py-2.5 px-6 sm:px-3.5 sm:before:flex-1"
 	>
 		<svg
 			viewBox="0 0 577 310"
@@ -65,8 +66,8 @@
 			<use href="#1d77c128-3ec1-4660-a7f6-26c7006705ad" />
 		</svg>
 		<div class="flex flex-wrap items-center gap-y-2 gap-x-4">
-			<p class="text-sm leading-6 text-gray-900">
-				<strong class="font-semibold">Piolabs</strong><svg
+			<p class="text-sm leading-6 text-gray-400">
+				<strong class="font-semibold text-white">Piolabs</strong><svg
 					viewBox="0 0 2 2"
 					class="mx-2 inline h-0.5 w-0.5 fill-current"
 					aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg
@@ -82,7 +83,7 @@
 			<button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
 				<span class="sr-only">ESGETIT</span>
 				<svg
-					class="h-5 w-5 text-gray-900"
+					class="h-5 w-5 text-gray-400"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 					aria-hidden="true"
@@ -96,12 +97,12 @@
 	</div>
 </header>
 
-<main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-[#0d0d0d]">
+<main class="flex flex-col p-6 w-screen h-screen items-center gap-5 font-serif  bg-gradient-to-r from-[#0d0d0d] to-blue-500">
 	<h1 class="text-5xl text-white font-bold">Treeski's Web3 Starter Dapp</h1>
-	<div class="card w-96 glass">
+	<div class="card w-96 glass mt-4">
 		<figure>
 			<img
-				src="/piolabslogo.png"
+				src={Logo}
 				alt="piolabslogo"
 			/>
 		</figure>
@@ -124,3 +125,8 @@
 	<div class="card" />
 	
 </main>
+
+
+<style>
+	
+</style>
