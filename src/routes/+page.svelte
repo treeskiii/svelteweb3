@@ -3,65 +3,131 @@
 		accountChainId,
 		connected,
 		connectMetamask,
-		connectWalletConnect,
 		disconnect,
 		walletAddress
 	} from '$lib/stores/provider';
 	import { balanceOnBlock } from '$lib/stores/state';
 	import { formatEther } from 'ethers/lib/utils';
-	
 </script>
 
 <header>
-	<div class="navbar bg-base-100">
+	<div class="navbar py-4 bg-base-100">
 		<div class="navbar-start">
-		  <a class="btn btn-ghost normal-case text-xl">Piolabs</a>
+			<a class="btn btn-ghost normal-case text-xl">Piolabs</a>
 		</div>
 		<div class="navbar-center hidden lg:flex">
-		  <ul class="menu menu-horizontal px-1">
-			<li><a>Item 1</a></li>
-			<li><a>Item 3</a></li>
-		  </ul>
+			<ul class="menu menu-horizontal px-1">
+				<li><a>Nav Link 1</a></li>
+				<li><a>Nav Link 2</a></li>
+			</ul>
 		</div>
 		<div class="navbar-end">
-		  <div class="btn mr-6" on:click={connectMetamask}>Connect Wallet</div>
+			{#if !$connected}
+				<div class="btn mr-6" on:click={connectMetamask}>Connect Wallet</div>
+			{:else}
+				<div class="btn mr-6" on:click={disconnect}>Disconnect</div>
+			{/if}
 		</div>
-	  </div>
+	</div>
+	<div
+		class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 py-2.5 px-6 sm:px-3.5 sm:before:flex-1"
+	>
+		<svg
+			viewBox="0 0 577 310"
+			aria-hidden="true"
+			class="absolute top-1/2 left-[max(-7rem,calc(50%-52rem))] -z-10 w-[36.0625rem] -translate-y-1/2 transform-gpu blur-2xl"
+		>
+			<path
+				id="1d77c128-3ec1-4660-a7f6-26c7006705ad"
+				fill="url(#49a52b64-16c6-4eb9-931b-8e24bf34e053)"
+				fill-opacity=".3"
+				d="m142.787 168.697-75.331 62.132L.016 88.702l142.771 79.995 135.671-111.9c-16.495 64.083-23.088 173.257 82.496 97.291C492.935 59.13 494.936-54.366 549.339 30.385c43.523 67.8 24.892 159.548 10.136 196.946l-128.493-95.28-36.628 177.599-251.567-140.953Z"
+			/>
+			<defs>
+				<linearGradient
+					id="49a52b64-16c6-4eb9-931b-8e24bf34e053"
+					x1="614.778"
+					x2="-42.453"
+					y1="26.617"
+					y2="96.115"
+					gradientUnits="userSpaceOnUse"
+				>
+					<stop stop-color="#9089FC" />
+					<stop offset="1" stop-color="#FF80B5" />
+				</linearGradient>
+			</defs>
+		</svg>
+		<svg
+			viewBox="0 0 577 310"
+			aria-hidden="true"
+			class="absolute top-1/2 left-[max(45rem,calc(50%+8rem))] -z-10 w-[36.0625rem] -translate-y-1/2 transform-gpu blur-2xl"
+		>
+			<use href="#1d77c128-3ec1-4660-a7f6-26c7006705ad" />
+		</svg>
+		<div class="flex flex-wrap items-center gap-y-2 gap-x-4">
+			<p class="text-sm leading-6 text-gray-900">
+				<strong class="font-semibold">Piolabs</strong><svg
+					viewBox="0 0 2 2"
+					class="mx-2 inline h-0.5 w-0.5 fill-current"
+					aria-hidden="true"><circle cx="1" cy="1" r="1" /></svg
+				>Piolabs Web 3 Template for Svelte
+			</p>
+			<a
+				href="#"
+				class="flex-none rounded-full bg-gray-900 py-1 px-3.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+				>Start <span aria-hidden="true">&rarr;</span></a
+			>
+		</div>
+		<div class="flex flex-1 justify-end">
+			<button type="button" class="-m-3 p-3 focus-visible:outline-offset-[-4px]">
+				<span class="sr-only">ESGETIT</span>
+				<svg
+					class="h-5 w-5 text-gray-900"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					aria-hidden="true"
+				>
+					<path
+						d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"
+					/>
+				</svg>
+			</button>
+		</div>
+	</div>
 </header>
 
-<main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-slate-300">
-	<h1 class="text-5xl text-black font-bold">Treeski's Starter Dapp</h1>
-	<div class="card"></div>
+<main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-[#0d0d0d]">
+	<h1 class="text-5xl text-white font-bold">Treeski's Web3 Starter Dapp</h1>
+	<div class="card w-96 glass">
+		<figure>
+			<img
+				src="https://images.unsplash.com/photo-1666649507247-6226902955c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
+				alt="car!"
+			/>
+		</figure>
+		<div class="card-body">
+			<h1>Eth Balance:</h1>
+			<h2 class="card-title text-white text-black">{formatEther($balanceOnBlock)} ETH</h2>
+			<p class="text-black  ">{$walletAddress.substr(-4)}</p>
+			<div class="card-actions justify-end">
+				{#if !$connected}
+					<button class="btn btn-primary" on:click={connectMetamask}>Connect Wallet</button>
+				{:else}
+					<button class="btn btn-primary" on:click={disconnect}>Disconnect </button>
+				{/if}
+			</div>
+		</div>
+	</div>
+	<div class="countdown" />
+
+	<div class="card" />
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
-		<h1 class="text-2xl text-black font-bold">Wallet and Provider</h1>
-		<h2 class="text-xl text-black font-semibold">$connected: {$connected}</h2>
-		<h2 class="text-xl text-black font-semibold">$walletAddress: {$walletAddress}</h2>
-		<h2 class="text-xl text-black font-semibold">
-			$accountChainId: {JSON.stringify($accountChainId)}
-		</h2>
-		<button
-			on:click={connectMetamask}
-			class="p-3 rounded-xl text-xl bg-black text-white font-semibold hover:scale-[1.05] transition transition-200"
-			>Connect via MetaMask</button
-		>
-		<button
-			on:click={connectWalletConnect}
-			class="p-3 rounded-xl text-xl bg-black text-white font-semibold hover:scale-[1.05] transition transition-200"
-			>Connect via WalletConnect</button
-		>
-		<button
-			on:click={disconnect}
-			class="p-3 rounded-xl text-xl bg-black text-white font-semibold hover:scale-[1.05] transition transition-200"
-			>Disconnect</button
-		>
-	</section>
-	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
-		<h1 class="text-2xl text-black font-bold">Sync contract state on block, event or interval</h1>
-		<p class="text-md text-black font-semibold">
+		<h1 class="text-2xl text-white font-bold">Sync contract state on block, event or interval</h1>
+		<p class="text-md text-white font-semibold">
 			Set In '$lib/globalState.ts', will load as long as a store is used from '$lib/stores/state.ts'
 			or you import the globalState in the root of your project with 'import "$lib/globalState";'
 		</p>
-		<h2 class="text-xl text-black font-semibold">
+		<h2 class="text-xl text-white font-semibold">
 			$balanceOnBlock: {formatEther($balanceOnBlock)} ETH
 		</h2>
 	</section>
