@@ -11,12 +11,12 @@
 </script>
 
 <header>
-	<div class="navbar py-4 bg-base-100">
+	<div class="navbar py-4 bg-base-100 bg-black">
 		<div class="navbar-start">
-			<a class="btn btn-ghost normal-case text-xl">Piolabs</a>
+			<a class="btn btn-ghost normal-case text-xl text-white">Piolabs</a>
 		</div>
 		<div class="navbar-center hidden lg:flex">
-			<ul class="menu menu-horizontal px-1">
+			<ul class="menu menu-horizontal px-1 text-white">
 				<li><a>Nav Link 1</a></li>
 				<li><a>Nav Link 2</a></li>
 			</ul>
@@ -106,10 +106,11 @@
 			/>
 		</figure>
 		<div class="card-body">
-			<h1>Eth Balance:</h1>
-			<h2 class="card-title text-white text-black">{formatEther($balanceOnBlock)} ETH</h2>
-			<p class="text-black  ">{$walletAddress.substr(-4)}</p>
-			<div class="card-actions justify-end">
+			<p class="text-white">Wallet Address: {$walletAddress.substr(-4)}</p>
+			<h1  class="text-gray-300" >Eth Balance:</h1>
+			<h2 class="card-title text-white ">{formatEther($balanceOnBlock)} ETH</h2>
+			
+			<div class="card-actions justify-end mt-4">
 				{#if !$connected}
 					<button class="btn btn-primary" on:click={connectMetamask}>Connect Wallet</button>
 				{:else}
@@ -121,14 +122,5 @@
 	<div class="countdown" />
 
 	<div class="card" />
-	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
-		<h1 class="text-2xl text-white font-bold">Sync contract state on block, event or interval</h1>
-		<p class="text-md text-white font-semibold">
-			Set In '$lib/globalState.ts', will load as long as a store is used from '$lib/stores/state.ts'
-			or you import the globalState in the root of your project with 'import "$lib/globalState";'
-		</p>
-		<h2 class="text-xl text-white font-semibold">
-			$balanceOnBlock: {formatEther($balanceOnBlock)} ETH
-		</h2>
-	</section>
+	
 </main>
