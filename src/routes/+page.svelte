@@ -9,11 +9,27 @@
 	} from '$lib/stores/provider';
 	import { balanceOnBlock } from '$lib/stores/state';
 	import { formatEther } from 'ethers/lib/utils';
-	import Navbar from 'src/components/navbar.svelte';
+	
 </script>
 
+<header>
+	<div class="navbar bg-base-100">
+		<div class="navbar-start">
+		  <a class="btn btn-ghost normal-case text-xl">Piolabs</a>
+		</div>
+		<div class="navbar-center hidden lg:flex">
+		  <ul class="menu menu-horizontal px-1">
+			<li><a>Item 1</a></li>
+			<li><a>Item 3</a></li>
+		  </ul>
+		</div>
+		<div class="navbar-end">
+		  <div class="btn mr-6" on:click={connectMetamask}>Connect Wallet</div>
+		</div>
+	  </div>
+</header>
+
 <main class="flex flex-col p-10 w-screen h-screen items-center gap-5 font-serif bg-slate-300">
-	<Navbar />
 	<h1 class="text-5xl text-black font-bold">Treeski's Starter Dapp</h1>
 	<div class="card"></div>
 	<section class="flex flex-col p-10 items-start gap-5 border-2 rounded-xl">
