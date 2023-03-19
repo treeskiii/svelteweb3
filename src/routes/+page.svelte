@@ -11,9 +11,9 @@
 </script>
 
 <header>
-	<div class="navbar py-4 bg-base-100 bg-black">
+	<div class="navbar py-4  bg-black">
 		<div class="navbar-start">
-			<a class="btn btn-ghost normal-case text-xl text-white">Piolabs</a>
+			<div class="btn btn-ghost normal-case text-xl text-white">Piolabs</div>
 		</div>
 		<div class="navbar-center hidden lg:flex">
 			<ul class="menu menu-horizontal px-1 text-white">
@@ -28,7 +28,7 @@
 				<div class="btn mr-6" on:click={disconnect}>Disconnect</div>
 			{/if}
 		</div>
-	</div>
+	</div>w
 	<div
 		class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 py-2.5 px-6 sm:px-3.5 sm:before:flex-1"
 	>
@@ -101,8 +101,8 @@
 	<div class="card w-96 glass">
 		<figure>
 			<img
-				src="https://images.unsplash.com/photo-1666649507247-6226902955c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2532&q=80"
-				alt="car!"
+				src="/piolabslogo.png"
+				alt="piolabslogo"
 			/>
 		</figure>
 		<div class="card-body">
