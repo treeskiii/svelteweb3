@@ -97,7 +97,7 @@
 	</div>
 </header>
 
-<main class="flex flex-col p-6 w-screen h-screen items-center gap-5 font-serif  bg-gradient-to-r from-[#0d0d0d] to-blue-500">
+<main class="flex flex-col p-6 w-screen h-screen items-center gap-5 font-serif  bg-gradient-to-r from-[#0d0d0d] to-black">
 	<h1 class="text-5xl text-white font-bold">Treeski's Web3 Starter Dapp</h1>
 	<div class="stats  glass ">
 		<div class="stat">
